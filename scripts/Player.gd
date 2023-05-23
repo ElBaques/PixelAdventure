@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	
 	is_grounded = _check_is_ground()
 	_set_animation()
+	#print (vel.y)
 
 func _get_input():
 	vel.x = 0
@@ -26,7 +27,6 @@ func _get_input():
 		$texture.scale.x = move_direction
 
 func _input(event: InputEvent) -> void:
-	print(is_grounded)
 	if event.is_action_pressed("jump") and is_grounded:
 		vel.y = jump_force /2
 
